@@ -9,11 +9,10 @@ def print_color_map():
     return len(major_colors) * len(minor_colors)
 
 def format_string(i, j, major, minor):
-    formatted_string.append(f'{i*5 + j} | {major} | {minor}')
+    formatted_string.append('{:<15} | {:<15} | {:<15}.format(i, j, major, minor)')
     return formatted_string
 
 result = print_color_map()
 assert(result == 25)
 assert(formatted_string[0].find("|") == formatted_string[24].find("|"))
-assert(formatted_string[0][0] == 1)
 print("All is well (maybe!)\n")
